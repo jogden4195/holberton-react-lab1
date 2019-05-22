@@ -35,12 +35,12 @@ class TodoApp extends Component <{}, MyList>{
   }
   // Handler to remove a todo
   public removeTodo(id:number) {
-    this.setState({ todos: this.state.todos.filter((todo: MyObj) => todo.id != id) })
+    this.setState({ todos: this.state.todos.filter((todo: MyObj) => todo.id !== id) })
   }
 
   public render() {
     return (
-      <div>
+      <div className="container">
         <Title />
         <AddTodo handleAdd={this.addTodo} />
         <TodoList todos={this.state.todos} handleRemove={this.removeTodo} />
