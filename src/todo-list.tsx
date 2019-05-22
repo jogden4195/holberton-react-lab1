@@ -23,7 +23,7 @@ const TodoList = ({ todos, handleRemove }: TodoListInput) => {
   }
 
   return (
-    <div>
+    <div className="container">
       <p><b>Your Todos:</b></p>
       {renderList()}
     </div>

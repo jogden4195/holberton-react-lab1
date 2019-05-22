@@ -3,16 +3,16 @@ import Title from "./title";
 import AddTodo from "./add-todo";
 import TodoList from "./todo-list";
 
-export interface IMyList {
- todos: IMyObj[];
+export interface MyList {
+ todos: MyObj[];
 }
 
-export interface IMyObj {
+export interface MyObj {
  text: string;
  id: number;
 }
 
-class TodoApp extends Component <{}, IMyList>{
+class TodoApp extends Component <{}, MyList>{
   constructor(props: {}) {
     super(props);
 
@@ -30,15 +30,15 @@ class TodoApp extends Component <{}, IMyList>{
     this.removeTodo = this.removeTodo.bind(this);
   }
   // Handler to add a todo
-  addTodo(todo:{}) {
-    // your code here
+  public addTodo(todo:MyObj) {
+    this.setState({ todos: [...this.state.todos, todo] });
   }
   // Handler to remove a todo
-  removeTodo(id:number) {
-    // your code here
+  public removeTodo(id:number) {
+    this.setState({ todos: this.state.todos.filter((todo: MyObj) => todo.id != id) })
   }
 
-  render() {
+  public render() {
     return (
       <div>
         <Title />

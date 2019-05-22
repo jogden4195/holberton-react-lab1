@@ -1,9 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Title extends Component {
-  render() {
-    return <title>Lets get lootin' for this gluten</title>;
-  }
-}
+
+const Title = () => ( 
+    <h1>Lets get lootin' for this gluten</h1>
+);
 
 export default Title;
